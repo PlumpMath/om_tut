@@ -75,9 +75,5 @@
           (dom/input #js {:type "text" :ref "new-contact"})
           (dom/button #js {:onClick #(add-contact app owner)} "Add contact"))))))
 
-(defn stripe [text bgc]
-  (let [st #js {:backgroundColor bgc}]
-    (dom/li #js {:style st} text)))
-
 (om/root contacts-view app-state
   {:target (. js/document (getElementById "contacts"))})
